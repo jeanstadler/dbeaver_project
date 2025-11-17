@@ -1,9 +1,3 @@
-Un fichier README.md détaillant :
-étapes d’installation,
-choix de modélisation,
-exemples de requêtes,
-observations de performance.
-
 
 # installation et configuration complète de dbeaver avec psql
 1er:
