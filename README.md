@@ -180,6 +180,7 @@ ORDER BY
 
 1. savoir le temps d'execution d'une ou plusieurs requêtes
 - mettre le mot clé "EXPLAIN ANALYZE" au début de la requête puis tester :
+```
 Gather Merge  (cost=6755.11..6833.26 rows=671 width=54) (actual time=47.047..51.206 rows=349.00 loops=1)
   Workers Planned: 2
   Workers Launched: 2
@@ -214,6 +215,7 @@ Planning:
   Buffers: shared hit=39 dirtied=2
 Planning Time: 1.485 ms
 Execution Time: 51.288 ms
+```
 
 2. Pour accélérer les requêtes, créer des index.sql sur les tables principales pour y mettre les index:
 -- Index pour accélérer les JOIN entre voie et commune
@@ -238,8 +240,9 @@ CREATE INDEX IF NOT EXISTS idx_voie_nom_voie
 
 2. éxécuter le script index.sql puis relancer la requête
 
-voir le résultat qui est : 
-"Sort  (cost=145.22..146.90 rows=671 width=54) (actual time=0.521..0.528 rows=349.00 loops=1)
+voir le résultat qui est :
+```
+Sort  (cost=145.22..146.90 rows=671 width=54) (actual time=0.521..0.528 rows=349.00 loops=1)
   Sort Key: voie.nom_voie, adresse.numero, adresse.rep
   Sort Method: quicksort  Memory: 48kB
   Buffers: shared hit=239
@@ -262,7 +265,8 @@ voir le résultat qui est :
 Planning:
   Buffers: shared hit=27
 Planning Time: 0.321 ms
-Execution Time: 0.557 ms"
+Execution Time: 0.557 ms
+```
 
 3. résultat :
 
